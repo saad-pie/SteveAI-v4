@@ -133,7 +133,7 @@ export default function Sidebar() {
   const menuItems = [
     { icon: MessageSquare, label: "Chat", path: `${import.meta.env.BASE_URL}chat` , color: "text-blue-500" },
     { icon: ImageIcon, label: "Image", path: `${import.meta.env.BASE_URL}image`, color: "text-purple-500" },
-    { icon: Video, label: "Video", path: "`${import.meta.env.BASE_URL}video`, color: "text-red-500" },
+    { icon: Video, label: "Video", path: `${import.meta.env.BASE_URL}video`, color: "text-red-500" },
     { icon: Box, label: "3D Gen", path: `${import.meta.env.BASE_URL}3d`, color: "text-green-500" },
   ];
 
