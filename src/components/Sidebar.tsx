@@ -131,10 +131,10 @@ export default function Sidebar() {
   const groupedSessions = groupSessions(sessions);
 
   const menuItems = [
-    { icon: MessageSquare, label: "Chat", path: "/chat", color: "text-blue-500" },
-    { icon: ImageIcon, label: "Image", path: "/image", color: "text-purple-500" },
-    { icon: Video, label: "Video", path: "/video", color: "text-red-500" },
-    { icon: Box, label: "3D Gen", path: "/3d", color: "text-green-500" },
+    { icon: MessageSquare, label: "Chat", path: `${import.meta.env.BASE_URL}chat` , color: "text-blue-500" },
+    { icon: ImageIcon, label: "Image", path: `${import.meta.env.BASE_URL}image`, color: "text-purple-500" },
+    { icon: Video, label: "Video", path: "`${import.meta.env.BASE_URL}video`, color: "text-red-500" },
+    { icon: Box, label: "3D Gen", path: `${import.meta.env.BASE_URL}3d`, color: "text-green-500" },
   ];
 
   const isChatPage = location.pathname.startsWith("/chat");
@@ -174,7 +174,7 @@ export default function Sidebar() {
 
         <button 
           onClick={() => {
-            navigate("/chat");
+            navigate(`${import.meta.env.BASE_URL}chat`);
             setIsOpen(false);
           }}
           className="flex items-center gap-3 px-4 py-3 mb-6 rounded-2xl bg-white/5 border border-white/10 text-sm font-bold text-white hover:bg-white/10 transition-all group"
@@ -252,11 +252,11 @@ export default function Sidebar() {
                           </form>
                         ) : (
                           <Link
-                            to={`/chat/${session.id}`}
+                            to={`${import.meta.env.BASE_URL}chat/${session.id}`}
                             onClick={() => setIsOpen(false)}
                             className={cn(
                               "flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium transition-all group relative",
-                              location.pathname === `/chat/${session.id}`
+                              location.pathname === `${import.meta.env.BASE_URL}chat/${session.id}`
                                 ? "bg-white/5 text-white"
                                 : "text-gray-500 hover:bg-white/5 hover:text-white"
                             )}
