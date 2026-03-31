@@ -7,7 +7,7 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     // Add this line. Replace 'SteveAI-v4' with your actual repository name.
-    base: '/SteveAI-v4', 
+    base: '/SteveAI-v4/', 
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
