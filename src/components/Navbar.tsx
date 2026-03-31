@@ -19,13 +19,13 @@ export default function Navbar() {
   const showSidebar = (isChatPage || isImagePage || isVideoPage || isThreeDPage);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Chat", path: "/chat" },
-    { name: "Image Gen", path: "/image" },
-    { name: "Video Gen", path: "/video" },
-    { name: "3D Gen", path: "/3d" },
-    { name: "Docs", path: "/docs" },
-    { name: "About", path: "/about" },
+    { name: "Home", path: import.meta.env.BASE_URL },
+    { name: "Chat", path: `${import.meta.env.BASE_URL}chat` },
+    { name: "Image Gen", path: `${import.meta.env.BASE_URL}image` },
+    { name: "Video Gen", path: `${import.meta.env.BASE_URL}video` },
+    { name: "3D Gen", path: `${import.meta.env.BASE_URL}3d` },
+    { name: "Docs", path: `${import.meta.env.BASE_URL}docs` },
+    { name: "About", path: `${import.meta.env.BASE_URL}about` },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Navbar() {
                 <Menu className="w-6 h-6" />
               </button>
             )}
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to={import.meta.env.BASE_URL} className="flex items-center gap-2 group">
               <div className="relative">
                 <Cpu className="w-8 h-8 text-blue-500 group-hover:text-blue-400 transition-colors" />
                 <div className="absolute inset-0 bg-blue-500/20 blur-lg rounded-full animate-pulse" />
@@ -90,7 +90,7 @@ export default function Navbar() {
               ) : (
                 <div className="flex items-center gap-4">
                   <Link
-                    to="/login"
+                    to={`${import.meta.env.BASE_URL}login`}
                     className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
                   >
                     Login
